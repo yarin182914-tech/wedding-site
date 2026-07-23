@@ -20,6 +20,16 @@ function toggleMenu() {
 
 document.addEventListener('DOMContentLoaded', () => showTab('timeline'));
 
+const bgSlides = document.querySelectorAll('.bg-slide');
+if (bgSlides.length > 1) {
+    let bgIndex = 0;
+    setInterval(() => {
+        bgSlides[bgIndex].classList.remove('active');
+        bgIndex = (bgIndex + 1) % bgSlides.length;
+        bgSlides[bgIndex].classList.add('active');
+    }, 5000);
+}
+
 // כתובת המייל שמקבלת את ההרשמות של פנויים/ות - אפשר להחליף בקלות
 const SINGLES_EMAIL = 'yarin182914@gmail.com';
 

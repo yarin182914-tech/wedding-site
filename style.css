@@ -27,16 +27,25 @@ body {
     position: relative;
 }
 
-/* התמונה עצמה, קבועה מאחורי כל התוכן */
-body::before {
-    content: "";
+/* סליידשואו הרקע - כמה תמונות זוגיות שמתחלפות בדעיכה חלקה */
+.bg-slideshow {
     position: fixed;
     inset: 0;
-    background-image: url('images/background.jpg');
+    z-index: -3;
+}
+
+.bg-slide {
+    position: absolute;
+    inset: 0;
     background-size: cover;
-    background-position: top;
+    background-position: center;
     background-repeat: no-repeat;
-    z-index: -2;
+    opacity: 0;
+    transition: opacity 1.2s ease;
+}
+
+.bg-slide.active {
+    opacity: 1;
 }
 
 /* קשת הצבעים של היום: זהב באור יום, סגול-לילה בתחתית - מלווה את מסלול האירוע */
@@ -199,6 +208,10 @@ footer {
     .tab-content.active {
         animation: none;
         opacity: 1;
+    }
+
+    .bg-slide {
+        transition: none;
     }
 }
 
