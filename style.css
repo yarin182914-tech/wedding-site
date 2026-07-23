@@ -507,6 +507,37 @@ footer {
     border-color: transparent;
 }
 
+.quiz-feedback {
+    text-align: center;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 8px;
+    margin: 12px 0 0;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.quiz-feedback.is-correct {
+    color: #2e6b2e;
+}
+
+.quiz-feedback.is-wrong {
+    color: var(--rose);
+}
+
+.quiz-next {
+    display: block;
+    margin: 14px auto 0;
+    font-family: var(--font-utility);
+    letter-spacing: 0.03em;
+    font-size: 1em;
+    padding: 8px 24px;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(120deg, var(--amber), var(--rose));
+    cursor: pointer;
+}
+
 .quiz-result {
     text-align: center;
     background-color: rgba(255, 255, 255, 0.85);

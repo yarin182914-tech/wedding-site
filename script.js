@@ -113,7 +113,8 @@ const QUIZ = [
             'בבית הספר לטיסה - היא הייתה חונכת והוא היה חניך',
             'בבית ספר, היא הייתה דלוקה עליו והתחילה איתו בבית המרזח',
             'במכינה - הוא מיין אותה למכינה, למחזור תחתיו, והיא "עשתה מה שצריך" כדי להתקבל',
-            'בשיעור פילאטיס - הוא הגיע לאימון ניסיון והיא דאגה לתקן אותו לא מעט'
+            'בשיעור פילאטיס - הוא הגיע לאימון ניסיון והיא דאגה לתקן אותו לא מעט',
+            'אחות של ירין ואח של מאיה חברים הכי טובים והם שידכו ביניהם'
         ],
         correct: 0
     },
@@ -146,6 +147,11 @@ function renderQuizQuestion() {
     const shuffled = shuffleArray(q.options.map((text, i) => ({ text, isCorrect: i === q.correct })));
 
     document.getElementById('quiz-question').textContent = `שאלה ${quizIndex + 1} מתוך ${QUIZ.length}: ${q.q}`;
+    const feedbackEl = document.getElementById('quiz-feedback');
+    feedbackEl.hidden = true;
+    feedbackEl.classList.remove('is-correct', 'is-wrong');
+    document.getElementById('quiz-next').hidden = true;
+
     const optionsEl = document.getElementById('quiz-options');
     optionsEl.innerHTML = '';
     shuffled.forEach(opt => {
@@ -159,25 +165,37 @@ function renderQuizQuestion() {
 }
 
 function answerQuiz(button, isCorrect, shuffled, optionsEl) {
+    const correctText = shuffled.find(opt => opt.isCorrect).text;
+
     Array.from(optionsEl.children).forEach((btn, i) => {
         btn.disabled = true;
         if (shuffled[i].isCorrect) {
             btn.classList.add('correct');
         }
     });
+
+    const feedbackEl = document.getElementById('quiz-feedback');
+    feedbackEl.hidden = false;
     if (isCorrect) {
         quizScore++;
+        feedbackEl.textContent = '✅ נכון!';
+        feedbackEl.classList.add('is-correct');
     } else {
         button.classList.add('wrong');
+        feedbackEl.textContent = `❌ לא נכון. התשובה הנכונה: ${correctText}`;
+        feedbackEl.classList.add('is-wrong');
     }
-    setTimeout(() => {
-        quizIndex++;
-        if (quizIndex < QUIZ.length) {
-            renderQuizQuestion();
-        } else {
-            showQuizResult();
-        }
-    }, 1400);
+
+    document.getElementById('quiz-next').hidden = false;
+}
+
+function nextQuizQuestion() {
+    quizIndex++;
+    if (quizIndex < QUIZ.length) {
+        renderQuizQuestion();
+    } else {
+        showQuizResult();
+    }
 }
 
 function showQuizResult() {
