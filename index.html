@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="he">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>מאיה × ירין מתחתנים</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Rubik:wght@500;700;900&family=Oswald:wght@500;600;700&family=Alef:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <p class="eyebrow">מוזמנים לחגוג איתנו</p>
+        <h1 class="couple-names">מאיה <span class="amp">×</span> ירין</h1>
+        <p class="date-badge">4.6.27 · יום שישי</p>
+
+        <button class="menu-toggle" aria-label="פתיחת תפריט" aria-expanded="false" onclick="toggleMenu()">☰</button>
+        <nav>
+            <ul>
+                <li><a href="#timeline" class="tab-link" onclick="showTab('timeline')">הלו"ז</a></li>
+                <li><a href="#lineup" class="tab-link" onclick="showTab('lineup')">הליינאפ</a></li>
+                <li><a href="#expectations" class="tab-link" onclick="showTab('expectations')">תיאום ציפיות</a></li>
+                <li><a href="#singles" class="tab-link" onclick="showTab('singles')">פנויים/ות 💘</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section id="timeline" class="tab-content">
+            <h2>איך היום הזה נבנה</h2>
+            <p class="section-lede">מתחילים רגוע באור יום, ומטפסים לאט לאט עד השעות הקטנות.</p>
+            <ul class="runsheet">
+                <li style="--dot:#E8A33D"><span class="time">16:00</span><span class="event">מתכנסים וניזונים</span></li>
+                <li style="--dot:#E58A4B"><span class="time">18:00</span><span class="event">מברכים ומתחייבים</span></li>
+                <li style="--dot:#D9646B"><span class="time">18:30</span><span class="event">חוגגים עם הדודים</span></li>
+                <li style="--dot:#B8567B"><span class="time">22:30</span><span class="event">לאפטר ממשיכים</span></li>
+                <li style="--dot:#8A4A82"><span class="time">23:30</span><span class="event">הסעה לעייפים</span></li>
+                <li style="--dot:#6B3F73"><span class="time">00:00</span><span class="event">הטראנסים מתחילים</span></li>
+                <li style="--dot:#3A2B54"><span class="time">02:00</span><span class="event">פאניקה מורידים</span></li>
+            </ul>
+        </section>
+
+        <section id="lineup" class="tab-content">
+            <h2>ליינאפ המוזיקה</h2>
+            <p class="section-lede">שני stages, לילה אחד.</p>
+            <ul class="lineup-list">
+                <li class="main-stage">
+                    <span class="lineup-time">18:30</span>
+                    <span class="artist">Hermetico</span>
+                    <span class="stage-label">Main Stage</span>
+                </li>
+                <li class="forest-stage">
+                    <span class="lineup-time">22:30</span>
+                    <span class="artist">Doctor K</span>
+                    <span class="stage-label">Forest Stage</span>
+                </li>
+                <li class="forest-stage">
+                    <span class="lineup-time">00:00</span>
+                    <span class="artist">Planet X</span>
+                    <span class="stage-label">Forest Stage</span>
+                </li>
+            </ul>
+        </section>
+
+        <section id="expectations" class="tab-content">
+            <h2>תיאום ציפיות 💛</h2>
+            <p>
+                אנחנו הכי מתרגשים בעולם לחגוג איתכם, ורוצים להגיד מראש משהו קטן כדי שכולנו נהיה באותו ראש.
+                <br>
+                זו הולכת להיות חתונת שישי צהריים שמתחילה רגוע ונבנית לאט לאט לאירוע ארוך, שמח ומלא אנרגיות. החופה תתקיים ב־18:00, ומשם נמשיך לריקודים, מוזיקה טובה ועלייה הדרגתית בקצב עד השעות הקטנות של הלילה.
+                <br>
+                אנחנו לגמרי יודעים שלא כולם רגילים לאירועים בסגנון —וזה העניין: אין לחץ, אין חובות, אין “צריך להישאר”.<br> באתם — כיף לנו! נשארתם — כיף כפול!! הלכתם — אנחנו עדיין ממש אוהבים אתכם !!!
+                <br>
+                יהיה פתרון הסעה למי שירצה לסיים מוקדם יותר (בסביבות 23:30), כדי שמי שמתעייף יוכל לחזור בנוחות ובשקט.
+                <br>
+                למי שיישאר איתנו ללילה מחכה המשך של אווירה טובה—סטייל יותר אלקטרוני (האוס, טכנו וטראנס), ואפשרות להישאר לישון במקום.<br> חשוב לדעת שמדובר בלינה פשוטה במזרונים במתחם מאהל, ולמי שרוצה יותר נוחות—מוזמנים להביא אוהל וציוד שינה משלכם.
+                <br>
+                ועוד משהו קטן: זה אירוע קליל ופתוח, אז תבואו בנוח. בגדים נוחים לריקודים זה, ציוד ללילה למי שנשאר, ובגד ים לבריכה😄
+                <br>
+                בסוף הכי חשוב לנו דבר אחד—שתבואו בכיף, בלי לחץ, ושתהיו חלק מהיום הזה בדרך שנעימה לכם.
+            </p>
+        </section>
+
+        <section id="singles" class="tab-content">
+            <h2>פנויים/ות 💘</h2>
+            <p class="section-lede">בואו לרקוד, לא לבד. תירשמו מראש - ואנחנו נדאג לחבר ביניכם ברחבה.</p>
+            <form id="singles-form" class="singles-form" onsubmit="return submitSingle(event)">
+                <label>
+                    שם
+                    <input type="text" id="single-name" required>
+                </label>
+                <label>
+                    איך יוצרים איתך קשר (טלפון / אינסטגרם)
+                    <input type="text" id="single-contact" required>
+                </label>
+                <label>
+                    משהו קליל עלייך (אופציונלי)
+                    <textarea id="single-note" rows="3"></textarea>
+                </label>
+                <button type="submit">💌 הרשמה לרשימה</button>
+            </form>
+            <p class="singles-note">ההרשמה נשלחת אלינו במייל - שקט ופרטי, בלי סוויפים ציבוריים 😉</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>מתרגשים ואוהבים</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>

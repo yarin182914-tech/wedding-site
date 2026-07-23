@@ -1,0 +1,439 @@
+:root {
+    --amber: #E8A33D;
+    --rose: #D9646B;
+    --plum: #6B3F73;
+    --indigo: #241B36;
+    --sand: #F5E6C8;
+    --ink: #2B2320;
+
+    --font-display: 'Rubik', sans-serif;
+    --font-utility: 'Oswald', sans-serif;
+    --font-body: 'Alef', sans-serif;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: var(--font-body);
+    direction: rtl;
+    text-align: right;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0 0 60px;
+    color: var(--ink);
+    background: #000;
+    position: relative;
+}
+
+/* התמונה עצמה, קבועה מאחורי כל התוכן */
+body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background-image: url('images/background.jpg');
+    background-size: cover;
+    background-position: top;
+    background-repeat: no-repeat;
+    z-index: -2;
+}
+
+/* קשת הצבעים של היום: זהב באור יום, סגול-לילה בתחתית - מלווה את מסלול האירוע */
+body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: linear-gradient(180deg,
+        rgba(232, 163, 61, 0.35) 0%,
+        rgba(217, 100, 107, 0.30) 40%,
+        rgba(107, 63, 115, 0.45) 75%,
+        rgba(36, 27, 54, 0.65) 100%);
+    z-index: -1;
+}
+
+header {
+    padding: 32px 20px 22px;
+    text-align: center;
+    position: relative;
+    color: #fff;
+}
+
+.eyebrow {
+    font-family: var(--font-utility);
+    text-transform: uppercase;
+    letter-spacing: 0.18em;
+    font-size: 0.85em;
+    margin: 0 0 8px;
+    color: var(--sand);
+    opacity: 0.9;
+}
+
+.couple-names {
+    font-family: var(--font-display);
+    font-weight: 900;
+    font-size: clamp(2.4em, 9vw, 4.2em);
+    margin: 0;
+    text-shadow: 0 3px 18px rgba(0, 0, 0, 0.55);
+}
+
+.couple-names .amp {
+    color: var(--amber);
+    padding: 0 0.15em;
+}
+
+.date-badge {
+    display: inline-block;
+    font-family: var(--font-utility);
+    font-size: 0.95em;
+    letter-spacing: 0.06em;
+    margin: 14px 0 22px;
+    padding: 6px 18px;
+    border: 1.5px dashed rgba(245, 230, 200, 0.7);
+    border-radius: 999px;
+    color: var(--sand);
+}
+
+.menu-toggle {
+    display: none;
+    position: absolute;
+    top: 28px;
+    left: 20px;
+    background: rgba(0, 0, 0, 0.25);
+    border: 1.5px solid rgba(245, 230, 200, 0.6);
+    color: #fff;
+    font-size: 1.3em;
+    line-height: 1;
+    padding: 4px 12px;
+    border-radius: 8px;
+    cursor: pointer;
+}
+
+nav ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    gap: 10px;
+    flex-wrap: wrap;
+}
+
+nav ul li a {
+    display: inline-block;
+    text-decoration: none;
+    color: var(--sand);
+    font-family: var(--font-utility);
+    letter-spacing: 0.04em;
+    padding: 8px 20px;
+    border-radius: 999px;
+    border: 1.5px solid rgba(245, 230, 200, 0.5);
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+
+nav ul li a:hover {
+    border-color: var(--sand);
+}
+
+nav ul li a.active {
+    background: linear-gradient(120deg, var(--amber), var(--rose));
+    color: #fff;
+    border-color: transparent;
+}
+
+main {
+    padding: 30px 20px 10px;
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+h2 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: clamp(1.6em, 4.5vw, 2.3em);
+    text-align: center;
+    margin: 0 0 6px;
+    color: #fff;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+}
+
+.section-lede {
+    text-align: center;
+    color: var(--sand);
+    font-size: 1.05em;
+    margin: 0 0 26px;
+}
+
+footer {
+    background: var(--indigo);
+    color: var(--sand);
+    text-align: center;
+    padding: 10px 0;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+}
+
+.tab-content {
+    display: none;
+    opacity: 0;
+}
+
+.tab-content.active {
+    display: block;
+    animation: fadeIn 0.4s ease forwards;
+}
+
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+        transform: translateY(8px);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    .tab-content.active {
+        animation: none;
+        opacity: 1;
+    }
+}
+
+.tab-link {
+    cursor: pointer;
+}
+
+/* לו"ז - קו זמן שעובר מזהב לילי-אור לסגול-לילה, כל נקודה בצבע השעה שלה */
+.runsheet {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 620px;
+    border-right: 3px solid rgba(245, 230, 200, 0.5);
+}
+
+.runsheet li {
+    position: relative;
+    display: flex;
+    align-items: baseline;
+    gap: 16px;
+    padding: 14px 26px 14px 10px;
+    background-color: rgba(255, 255, 255, 0.85);
+    margin-bottom: 8px;
+    border-radius: 6px 0 0 6px;
+}
+
+.runsheet li::before {
+    content: "";
+    position: absolute;
+    right: -9px;
+    top: 50%;
+    transform: translateY(-50%);
+    width: 15px;
+    height: 15px;
+    border-radius: 50%;
+    background: var(--dot);
+    border: 2px solid #fff;
+}
+
+.runsheet .time {
+    font-family: var(--font-utility);
+    font-weight: 600;
+    font-size: 1.3em;
+    color: var(--dot);
+    min-width: 3.2em;
+}
+
+.runsheet .event {
+    font-size: 1.15em;
+    font-weight: bold;
+}
+
+/* ליינאפ - בהשראת פוסטר פסטיבל */
+.lineup-list {
+    list-style: none;
+    margin: 0 auto;
+    padding: 0;
+    max-width: 620px;
+}
+
+.lineup-list li {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    flex-wrap: wrap;
+    gap: 14px;
+    background-color: rgba(255, 255, 255, 0.85);
+    padding: 16px 20px;
+    margin-bottom: 12px;
+    border-radius: 8px;
+    border-right: 5px solid var(--rose);
+}
+
+.lineup-list li.forest-stage {
+    border-right-color: var(--plum);
+}
+
+.lineup-time {
+    font-family: var(--font-utility);
+    font-weight: 600;
+    color: var(--ink);
+    opacity: 0.7;
+}
+
+.artist {
+    font-family: var(--font-utility);
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    font-weight: 700;
+    font-size: 1.5em;
+    color: var(--ink);
+}
+
+.stage-label {
+    display: inline-block;
+    background-color: var(--rose);
+    color: #fff;
+    padding: 4px 12px;
+    border-radius: 999px;
+    font-family: var(--font-utility);
+    font-size: 0.7em;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+}
+
+.forest-stage .stage-label {
+    background-color: var(--plum);
+}
+
+.singles-form {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    max-width: 480px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.88);
+    padding: 24px;
+    border-radius: 10px;
+    border: 1.5px dashed var(--rose);
+}
+
+.singles-form label {
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+    font-weight: bold;
+    font-size: 0.95em;
+}
+
+.singles-form input,
+.singles-form textarea {
+    font-family: var(--font-body);
+    font-size: 1em;
+    padding: 10px 12px;
+    border: 1.5px solid rgba(107, 63, 115, 0.35);
+    border-radius: 8px;
+    background: #fff;
+    color: var(--ink);
+    resize: vertical;
+}
+
+.singles-form input:focus,
+.singles-form textarea:focus {
+    outline: none;
+    border-color: var(--rose);
+}
+
+.singles-form button {
+    align-self: center;
+    font-family: var(--font-utility);
+    letter-spacing: 0.03em;
+    font-size: 1.05em;
+    padding: 10px 28px;
+    border: none;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(120deg, var(--amber), var(--rose));
+    cursor: pointer;
+    transition: transform 0.15s ease;
+}
+
+.singles-form button:hover {
+    transform: translateY(-2px);
+}
+
+.singles-note {
+    text-align: center;
+    color: var(--sand);
+    font-size: 0.9em;
+    margin-top: 14px;
+}
+
+#expectations p {
+    font-size: 1.15em;
+    line-height: 1.55em;
+    text-align: center;
+    margin: 0 auto;
+    max-width: 760px;
+    background-color: rgba(255, 255, 255, 0.88);
+    padding: 26px;
+    border-radius: 10px;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 3px solid var(--amber);
+    outline-offset: 2px;
+}
+
+@media (max-width: 700px) {
+    body {
+        padding-bottom: 90px;
+    }
+
+    .menu-toggle {
+        display: inline-block;
+    }
+
+    nav {
+        display: none;
+        margin-top: 10px;
+    }
+
+    nav.open {
+        display: block;
+    }
+
+    nav ul {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    nav ul li a {
+        display: block;
+        width: 200px;
+        text-align: center;
+    }
+
+    .runsheet li,
+    .lineup-list li {
+        padding: 12px 20px 12px 10px;
+    }
+
+    .artist {
+        font-size: 1.25em;
+    }
+
+    #expectations p {
+        font-size: 1em;
+        padding: 18px;
+    }
+
+    footer p {
+        margin: 8px 0;
+        font-size: 0.9em;
+    }
+}
