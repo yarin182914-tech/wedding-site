@@ -404,6 +404,87 @@ footer {
     left: -9999px;
 }
 
+#roadtrip h3 {
+    font-family: var(--font-display);
+    font-weight: 700;
+    font-size: 1.3em;
+    text-align: center;
+    color: #fff;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.5);
+    margin: 34px 0 4px;
+}
+
+.section-lede.small {
+    font-size: 0.9em;
+    margin-bottom: 16px;
+}
+
+.countdown {
+    display: flex;
+    justify-content: center;
+    gap: 12px;
+    flex-wrap: wrap;
+    max-width: 500px;
+    margin: 0 auto;
+}
+
+.countdown-item {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    min-width: 80px;
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 10px;
+    padding: 14px 10px;
+}
+
+.countdown-number {
+    font-family: var(--font-utility);
+    font-weight: 700;
+    font-size: 2em;
+    color: var(--plum);
+    line-height: 1;
+}
+
+.countdown-label {
+    font-size: 0.8em;
+    color: var(--ink);
+    margin-top: 4px;
+}
+
+.bingo-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 8px;
+    max-width: 620px;
+    margin: 0 auto;
+}
+
+.bingo-cell {
+    background-color: rgba(255, 255, 255, 0.85);
+    border-radius: 8px;
+    padding: 10px 6px;
+    text-align: center;
+    font-size: 0.8em;
+    font-weight: bold;
+    cursor: pointer;
+    min-height: 70px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background-color 0.15s ease, transform 0.15s ease;
+}
+
+.bingo-cell:hover {
+    transform: scale(1.03);
+}
+
+.bingo-cell.checked {
+    background: linear-gradient(120deg, var(--amber), var(--rose));
+    color: #fff;
+    text-decoration: line-through;
+}
+
 .singles-note {
     text-align: center;
     color: var(--sand);
@@ -460,6 +541,19 @@ button:focus-visible {
     .runsheet li,
     .lineup-list li {
         padding: 12px 20px 12px 10px;
+    }
+
+    .bingo-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    .countdown-item {
+        min-width: 65px;
+        padding: 10px 6px;
+    }
+
+    .countdown-number {
+        font-size: 1.5em;
     }
 
     .artist {

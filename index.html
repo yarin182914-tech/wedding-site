@@ -29,6 +29,7 @@
                 <li><a href="#expectations" class="tab-link" onclick="showTab('expectations')">תיאום ציפיות</a></li>
                 <li><a href="#singles" class="tab-link" onclick="showTab('singles')">פנויים/ות 💘</a></li>
                 <li><a href="#blessings" class="tab-link" onclick="showTab('blessings')">ברכות 💌</a></li>
+                <li><a href="#roadtrip" class="tab-link" onclick="showTab('roadtrip')">בדרך לחתונה 🚗</a></li>
             </ul>
         </nav>
     </header>
@@ -132,6 +133,54 @@
                 <button type="submit">שליחת ברכה 💌</button>
             </form>
             <p id="blessings-thanks" class="singles-note" hidden>תודה! הברכה התקבלה ונשמרה אצלנו 💛</p>
+        </section>
+
+        <section id="roadtrip" class="tab-content">
+            <h2>מעבירים את הזמן בדרך 🚗</h2>
+            <p class="section-lede">קצת בידור לנסיעה - קאונטדאון, פלייליסט ובינגו ליום עצמו.</p>
+
+            <div class="countdown" id="countdown">
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-days">–</span>
+                    <span class="countdown-label">ימים</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-hours">–</span>
+                    <span class="countdown-label">שעות</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-minutes">–</span>
+                    <span class="countdown-label">דקות</span>
+                </div>
+                <div class="countdown-item">
+                    <span class="countdown-number" id="cd-seconds">–</span>
+                    <span class="countdown-label">שניות</span>
+                </div>
+            </div>
+
+            <h3>פלייליסט לדרך 🎵</h3>
+            <p class="section-lede small">בקרוב - מוסיפים כאן פלייליסט</p>
+
+            <h3>בינגו ליום החתונה 🎉</h3>
+            <p class="section-lede small">מסמנים תוך כדי האירוע - מי משלים שורה קודם?</p>
+            <div class="bingo-grid" id="bingo-grid">
+                <div class="bingo-cell" onclick="toggleBingo(this)">מישהו בוכה בחופה</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">מישהו נופל בריקוד</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">רואים את הזוג מתנשק</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">שירה חופשית לגמרי לא בטעם</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">מישהו נרדם לפני חצות</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">נעליים עפות מהרחבה</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">מישהו מבקש שיר מהדיג'יי</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">תפסת את הזר</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">מישהו קופץ לבריכה בבגדים</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">סבתא רוקדת טראנס</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">מישהו מאבד את הטלפון</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">בוכים מרוב צחוק</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">שרים את המזמון בקול</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">ההסעה חוזרת כמעט ריקה</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">מבקשים "עוד שיר אחרון"</div>
+                <div class="bingo-cell" onclick="toggleBingo(this)">פוגשים מישהו שלא ראית שנים</div>
+            </div>
         </section>
     </main>
 

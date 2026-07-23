@@ -65,3 +65,39 @@ if (blessingsForm) {
             .catch(() => alert('משהו השתבש בשליחה, נסו שוב בעוד רגע.'));
     });
 }
+
+const WEDDING_DATE = new Date('2027-06-04T18:00:00+03:00');
+
+function updateCountdown() {
+    const diff = WEDDING_DATE.getTime() - new Date().getTime();
+    if (diff <= 0) {
+        return;
+    }
+    const days = Math.floor(diff / (1000 * 60 * 60 * 24));
+    const hours = Math.floor((diff / (1000 * 60 * 60)) % 24);
+    const minutes = Math.floor((diff / (1000 * 60)) % 60);
+    const seconds = Math.floor((diff / 1000) % 60);
+
+    document.getElementById('cd-days').textContent = days;
+    document.getElementById('cd-hours').textContent = String(hours).padStart(2, '0');
+    document.getElementById('cd-minutes').textContent = String(minutes).padStart(2, '0');
+    document.getElementById('cd-seconds').textContent = String(seconds).padStart(2, '0');
+}
+
+if (document.getElementById('countdown')) {
+    updateCountdown();
+    setInterval(updateCountdown, 1000);
+}
+
+function toggleBingo(cell) {
+    const cells = Array.from(document.querySelectorAll('.bingo-cell'));
+    const key = 'bingo-' + cells.indexOf(cell);
+    const checked = cell.classList.toggle('checked');
+    localStorage.setItem(key, checked ? '1' : '0');
+}
+
+document.querySelectorAll('.bingo-cell').forEach((cell, index) => {
+    if (localStorage.getItem('bingo-' + index) === '1') {
+        cell.classList.add('checked');
+    }
+});
