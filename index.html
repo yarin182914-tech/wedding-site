@@ -21,6 +21,7 @@
                 <li><a href="#lineup" class="tab-link" onclick="showTab('lineup')">הליינאפ</a></li>
                 <li><a href="#expectations" class="tab-link" onclick="showTab('expectations')">תיאום ציפיות</a></li>
                 <li><a href="#singles" class="tab-link" onclick="showTab('singles')">פנויים/ות 💘</a></li>
+                <li><a href="#blessings" class="tab-link" onclick="showTab('blessings')">ברכות 💌</a></li>
             </ul>
         </nav>
     </header>
@@ -100,6 +101,29 @@
                 <button type="submit">💌 הרשמה לרשימה</button>
             </form>
             <p class="singles-note">ההרשמה נשלחת אלינו במייל - שקט ופרטי, בלי סוויפים ציבוריים 😉</p>
+        </section>
+
+        <section id="blessings" class="tab-content">
+            <h2>ברכות 💌</h2>
+            <p class="section-lede">רוצים לשתף אותנו במילה חמה או בתמונה? נשמח לקרוא ולראות - זה נשאר בינינו.</p>
+            <form name="blessings" method="POST" data-netlify="true" data-netlify-honeypot="bot-field" enctype="multipart/form-data" id="blessings-form" class="singles-form">
+                <input type="hidden" name="form-name" value="blessings">
+                <p class="hidden-field"><label>אל תמלאו שדה זה: <input name="bot-field"></label></p>
+                <label>
+                    שם
+                    <input type="text" name="name" required>
+                </label>
+                <label>
+                    ברכה
+                    <textarea name="message" rows="4" required></textarea>
+                </label>
+                <label>
+                    תמונה (אופציונלי)
+                    <input type="file" name="photo" accept="image/*">
+                </label>
+                <button type="submit">שליחת ברכה 💌</button>
+            </form>
+            <p id="blessings-thanks" class="singles-note" hidden>תודה! הברכה התקבלה ונשמרה אצלנו 💛</p>
         </section>
     </main>
 

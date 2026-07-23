@@ -365,6 +365,11 @@ footer {
     transform: translateY(-2px);
 }
 
+.hidden-field {
+    position: absolute;
+    left: -9999px;
+}
+
 .singles-note {
     text-align: center;
     color: var(--sand);

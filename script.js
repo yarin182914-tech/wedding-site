@@ -41,3 +41,17 @@ function submitSingle(event) {
     document.getElementById('singles-form').reset();
     return false;
 }
+
+const blessingsForm = document.getElementById('blessings-form');
+if (blessingsForm) {
+    blessingsForm.addEventListener('submit', function (event) {
+        event.preventDefault();
+        const data = new FormData(blessingsForm);
+        fetch('/', { method: 'POST', body: data })
+            .then(() => {
+                blessingsForm.hidden = true;
+                document.getElementById('blessings-thanks').hidden = false;
+            })
+            .catch(() => alert('משהו השתבש בשליחה, נסו שוב בעוד רגע.'));
+    });
+}
