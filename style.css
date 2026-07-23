@@ -365,6 +365,27 @@ footer {
     transform: translateY(-2px);
 }
 
+.gift-button {
+    display: block;
+    max-width: 320px;
+    margin: 0 auto 22px;
+    text-align: center;
+    text-decoration: none;
+    font-family: var(--font-utility);
+    font-size: 1.1em;
+    letter-spacing: 0.03em;
+    padding: 12px 20px;
+    border-radius: 999px;
+    color: #fff;
+    background: linear-gradient(120deg, var(--plum), var(--indigo));
+    box-shadow: 0 4px 14px rgba(0, 0, 0, 0.3);
+    transition: transform 0.15s ease;
+}
+
+.gift-button:hover {
+    transform: translateY(-2px);
+}
+
 .hidden-field {
     position: absolute;
     left: -9999px;
